@@ -16,6 +16,9 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.post('/api/pessoas', 'PessoaController.create')
+Route.get('/api/pessoas/get', 'PessoaController.get')
+Route.get('/api/pessoas/get/:id', 'PessoaController.getById')
+Route.get('/api/pessoas/getPaginado', 'PessoaController.getPaginado')
+Route.put('/api/pessoas/update/:id', 'PessoaController.update')
+Route.delete('/api/pessoas/delete/:id', 'PessoaController.delete')
